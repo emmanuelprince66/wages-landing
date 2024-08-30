@@ -5,11 +5,15 @@ import Image from 'next/image';
 import CustomButton from '../ui/CustomButton';
 import { Link as ScrollLink } from "react-scroll";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { useMediaQuery , useTheme } from '@mui/material';
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   const handleHamToggle = () => setOpen((prev) => !prev);
+  const theme = useTheme();
+  
+  const isTabletOrDesktop = useMediaQuery(theme.breakpoints.up('sm'));
 
   const links = [
     { id: 1, to: "feature", des: "Feature" },
@@ -40,7 +44,11 @@ const Navbar = () => {
           ))}
         </div>
 
-        <CustomButton className='py-[10px] capitalize hidden md:block'>Get The App</CustomButton>
+        {isTabletOrDesktop && (
+        <CustomButton className="py-[10px] capitalize">
+          Get The App
+        </CustomButton>
+      )}
 
         <div 
           className='block md:hidden transition-transform duration-300 ease-in-out transform'
@@ -50,7 +58,6 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Overlay menu */}
       <div 
         className={`absolute top-full left-0 right-0 h-[90vh] bg-[#F9FFF9] z-50 flex flex-col items-center py-6 transition-transform duration-300 ease-in-out ${open ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-full'}`}
       >

@@ -2,6 +2,7 @@
 import React from 'react'
 import Image from 'next/image';
 
+
 const Header = () => {
   return (
     <div className='flex_column_center w-full bg-[#F9FFF9] pt-4 text-center gap-4  md:px-0 px-2'>
