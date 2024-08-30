@@ -1,9 +1,16 @@
 "use client"
 import React from 'react'
+import { useStateContext } from '@/app/util/StateContext'
 
 const Footer = () => {
+  const { state } = useStateContext();
+
   return (
-    <div>Footer</div>
+    <>
+      {!state && (
+        <div>Footer</div>
+      )}
+    </>
   )
 }
 

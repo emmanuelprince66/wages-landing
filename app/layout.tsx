@@ -1,11 +1,10 @@
-// RootLayout.tsx
-
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
 import ThemeProviderComponent from "./util/ThemeProviderComponent";
+import { StateProvider } from "./util/StateContext";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -25,13 +24,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${montserrat.className} flex flex-col h-full`}>
-        <ThemeProviderComponent>
-          <Navbar />
-          <main className="flex-grow">
-            {children}
-          </main>
-          <Footer />
-        </ThemeProviderComponent>
+      <StateProvider>
+          <ThemeProviderComponent>
+            <Navbar />
+            <main className="flex-grow">
+              {children}
+            </main>
+            <Footer />
+          </ThemeProviderComponent>
+        </StateProvider>
       </body>
     </html>
   );
