@@ -2,32 +2,46 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+
+.flex_between {
+  @apply flex items-center justify-between;
+}
+.flex_start {
+  @apply flex items-start justify-between;
+
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.flex_center {
+  @apply flex items-center justify-center;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.flex_even {
+  @apply flex items-center justify-evenly;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.flex_column {
+  @apply flex flex-col items-start;
+}
+.flex_column_center {
+  @apply flex flex-col items-center justify-center;
+}
+
+.text_small {
+  @apply text-[16px] font-[400];
+}
+
+.text_medium {
+  @apply text-[20px] font-[400];
+}
+
+.text_xlarge {
+  @apply text-[40px] font-[600];
+}
+
+.text_slarge {
+  @apply text-[30px] font-[600];
+}
+
+.text_mlarge {
+  @apply text-[25px] font-[600];
 }
