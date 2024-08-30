@@ -68,7 +68,7 @@
         <div 
           className={`absolute top-full left-0 right-0 h-[90vh] bg-[#F9FFF9] z-50 flex flex-col items-center py-6 transition-transform duration-300 ease-in-out ${open ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-full'}`}
         >
-          <div className='flex  flex-col justify-center items-center text-center gap-9 mt-10' style={{marginBottom:"70%"}}>
+          <div className='flex  flex-col justify-center items-center text-center gap-9 mt-10' style={{marginBottom:"50%"}}>
             {links.map((link) => (
               <ScrollLink
                 key={link.id}

@@ -14,7 +14,7 @@ const About = () => {
     <div className="w-full md:w-[80%] mx-auto bg-[#F9F8FF] py-[2rem] px-[0.8rem]  md:py-[3rem] rounded-md md:px-[2rem] flex flex-col  md:flex-row gap-[3rem]">
   <div className="flex-1 flex flex-col gap-3 ">
     <div className="flex-1 rounded-[12px] bg-white p-3 flex items-start gap-3">
-      <Image width={25} height={25} src="/about/a-3.svg" className="" alt="icn" />
+      <Image width={25} height={25} src="/about/a-3.svg" className="pt-1" alt="icn" />
       <div className="flex flex-col gap-3">
         <p className="text-[22px] font-[600] text-primary_black">
           We Help You Achieve Your Goals
@@ -28,7 +28,7 @@ const About = () => {
     </div>
 
     <div className="flex-1 rounded-[12px] bg-white p-3 flex items-start gap-3">
-      <Image width={25} height={25} src="/about/a-4.svg" className="" alt="icn" />
+      <Image width={25} height={25} src="/about/a-4.svg" className="pt-1" alt="icn" />
       <div className="flex flex-col gap-3">
         <p className="text-[22px] font-[600] text-primary_black">
           We are Secure and Reliable
