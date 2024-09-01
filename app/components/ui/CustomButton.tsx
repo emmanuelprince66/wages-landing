@@ -1,23 +1,33 @@
 "use client";
-import React from 'react';
-import { Button } from '@mui/material';
+import React from "react";
+import { Button } from "@mui/material";
 interface CustomButtonProps {
-  variant?: 'text' | 'outlined' | 'contained';
+  variant?: "text" | "outlined" | "contained";
   onClick?: () => void;
   children: React.ReactNode;
-  backgroundColor?:string;
-  className?: string; 
+  backgroundColor?: string;
+  py?: string;
+  className?: string;
 }
 
-const CustomButton: React.FC<CustomButtonProps> = ({ variant = 'contained', onClick, children, className , backgroundColor="#02981D" }) => {
+const CustomButton: React.FC<CustomButtonProps> = ({
+  variant = "contained",
+  onClick,
+  children,
+  className,
+  backgroundColor = "#02981D",
+  py = "10px",
+}) => {
   return (
     <Button
-    sx={{
-        background:backgroundColor,
-    }}
+      sx={{
+        background: backgroundColor,
+        py: py,
+        textTransform: "capitalize",
+      }}
       variant={variant}
       onClick={onClick}
-      className={className} 
+      className={className}
     >
       {children}
     </Button>
