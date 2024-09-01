@@ -4,7 +4,7 @@ import React from 'react'
 const About = () => {
   return (
     <div className='flex_column_center w-full py-4 mx-auto text- gap-4 mt-[10%] md:mt-[4%] '>
-    <p className='text_xlarge mb-6'>
+    <p className='text-[25px] font-[600] md:text-[30px] md:font-[600] mb-6'>
       About Us
     </p>
 
