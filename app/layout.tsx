@@ -24,12 +24,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${montserrat.className} flex flex-col h-full`}>
-      <StateProvider>
+        <StateProvider>
           <ThemeProviderComponent>
             <Navbar />
-            <main className="flex-grow">
-              {children}
-            </main>
+            <main className="flex-grow">{children}</main>
             <Footer />
           </ThemeProviderComponent>
         </StateProvider>
