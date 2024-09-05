@@ -18,7 +18,7 @@ export default function Home() {
         <About />
         <Why />
         <Features />
-        {/* <Info /> */}
+        <Info />
         <Referral />
         <Dapp />
       </main>
