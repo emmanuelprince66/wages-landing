@@ -13,17 +13,15 @@ export default function Home() {
 
   return (
     <>
-      {!state && (
-        <main className="w-full h-full">
-          <Header />
-          <About />
-          <Why />
-          <Features />
-          {/* <Info /> */}
-          <Referral />
-          <Dapp />
-        </main>
-      )}
+      <main className="w-full h-full">
+        <Header />
+        <About />
+        <Why />
+        <Features />
+        {/* <Info /> */}
+        <Referral />
+        <Dapp />
+      </main>
     </>
   );
 }

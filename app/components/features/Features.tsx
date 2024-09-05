@@ -2,7 +2,10 @@ import React from "react";
 import Image from "next/image";
 const Features = () => {
   return (
-    <div className="flex_column_center w-full py-4 mx-auto text- gap-4 mt-[10%] md:mt-[4%] ">
+    <div
+      id="feature"
+      className="flex_column_center w-full py-4 mx-auto text- gap-4 mt-[10%] md:mt-[4%] "
+    >
       <p className="text-[25px] font-[600] md:text-[30px] md:font-[600] mb-6">
         Features
       </p>

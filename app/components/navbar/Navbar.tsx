@@ -7,11 +7,14 @@ import { Link as ScrollLink } from "react-scroll";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { useMediaQuery, useTheme } from "@mui/material";
 import { useStateContext } from "@/app/util/StateContext";
+import { usePathname } from "next/navigation";
+
 import Link from "next/link";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const { state, toggleState } = useStateContext();
+  const pathname = usePathname();
 
   const handleHamToggle = () => setOpen((prev) => !prev);
   const theme = useTheme();
@@ -19,19 +22,39 @@ const Navbar = () => {
   const isTabletOrDesktop = useMediaQuery(theme.breakpoints.up("sm"));
 
   const links = [
-    { id: 1, noti: "home", to: "/", des: "Home" },
+    { id: 1, noti: "home", to: "/", des: "Home", path: "/" },
     { id: 2, noti: "feature", to: "feature", des: "Feature" },
-    { id: 3, noti: "about", to: "about", des: "About Us" },
-    { id: 4, noti: "contact", to: "/contact", des: "Contact Us" },
+    { id: 3, noti: "about", to: "about", des: "About Us", path: "/about" },
+    {
+      id: 4,
+      noti: "contact",
+      to: "/contact",
+      des: "Contact Us",
+      path: "/contact",
+    },
     { id: 5, noti: "blog", to: "/blog", des: "Blog" },
   ];
 
-  console.log(open, isTabletOrDesktop);
+  const handleCloseOver = () => {
+    setOpen((prev) => !prev);
+  };
+
   useEffect(() => {
     if (open !== state) {
       toggleState();
     }
   }, [open, state, toggleState]);
+
+  useEffect(() => {
+    if (open) {
+      document.body.classList.add("no-scroll");
+    } else {
+      document.body.classList.remove("no-scroll");
+    }
+    return () => {
+      document.body.classList.remove("no-scroll");
+    };
+  }, [open]);
 
   return (
     <div className="relative w-full bg-[#ffff] py-7">
@@ -49,14 +72,18 @@ const Navbar = () => {
             link?.noti === "blog" ||
             link?.noti === "home" ? (
               <Link href={`${link?.to}`} key={link.id}>
-                <p className="text-primary_black text-[16px] hover:text-bold_green cursor-pointer text_small transition-colors duration-700 ease-in-out">
+                <p
+                  className={`text-primary_black text-[16px] ${
+                    link?.path === pathname && "font-[600] text-bold_green"
+                  }   hover:text-bold_green cursor-pointer text_small transition-colors duration-700 ease-in-out`}
+                >
                   {link.des}
                 </p>
               </Link>
             ) : (
               <ScrollLink
                 key={link.id}
-                to={link.to}
+                to={link?.to}
                 spy={true}
                 smooth={true}
                 offset={-2}
@@ -102,8 +129,11 @@ const Navbar = () => {
               link?.noti === "home" ? (
                 <Link href={`${link?.to}`} key={link.id}>
                   <p
+                    onClick={handleCloseOver}
                     style={{ fontSize: "2rem" }}
-                    className="text-primary_black  hover:text-bold_green cursor-pointer text_small transition-colors duration-700 ease-in-out"
+                    className={`text-primary_black ${
+                      link?.path === pathname && "font-[800] text-bold_green"
+                    }   hover:text-bold_green cursor-pointer text_small transition-colors duration-700 ease-in-out`}
                   >
                     {link.des}
                   </p>
@@ -116,6 +146,7 @@ const Navbar = () => {
                   smooth={true}
                   offset={-2}
                   duration={500}
+                  onClick={handleCloseOver}
                 >
                   <p
                     style={{ fontSize: "2rem" }}
