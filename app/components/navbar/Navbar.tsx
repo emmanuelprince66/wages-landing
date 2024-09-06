@@ -158,9 +158,9 @@ const Navbar = () => {
               )
             )}
           </div>
-          <CustomButton className="text-[20px] py-4 w-[70%] capitalize">
+          {/* <CustomButton className="text-[20px] py-4 w-[70%] capitalize">
             Get The App
-          </CustomButton>
+          </CustomButton> */}
         </div>
       )}
     </div>
