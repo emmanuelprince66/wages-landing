@@ -1,13 +1,14 @@
 "use client";
 import Image from "next/image";
-import Link from "next/link";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import Dapp from "./Dapp";
+import Grid from "@mui/material/Grid2";
+import { motion, useInView } from "framer-motion"; // Import Framer Motion
 
 const Contact = () => {
   const [mounted, setMounted] = useState(false);
@@ -73,65 +74,186 @@ const Contact = () => {
     },
   ];
 
+  const ContactInfoRef = useRef(null);
+  const DappRef = useRef(null);
+
+  const contactInfoView = useInView(ContactInfoRef, { once: false });
+  const dappView = useInView(DappRef, { once: false });
+
+  const faqAndContactsVariant = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 1.8, ease: "easeOut" },
+    },
+  };
+
+  // Animation variants for Dapp component
+
   return (
     <div className="flex_column_center text-center w-[90%] md:w-[75%] py-4 mx-auto gap-4 mt-[10%] md:mt-[3%] justify-center">
-      <p className="text-[25px] font-[600] md:text-[30px] md:font-[600] mb-1">
-        Contact Us
-      </p>
-      <p className="text-[14px] font-[400] md:text-[20px] md:font-[400] mb-6">
-        Have Questions? Talk to our customer support team.
-      </p>
+      {/* Animating the FAQ and Contact information */}
+      <motion.div
+        className="w-full md:w-[90%]"
+        ref={ContactInfoRef}
+        initial="hidden"
+        animate={contactInfoView ? "visible" : "hidden"}
+        variants={faqAndContactsVariant}
+      >
+        <Grid container spacing={2} sx={{ width: "100%" }}>
+          <Grid size={{ xs: 12, md: 12 }}>
+            <div className="flex flex-col items-center text-center">
+              <p className="text-[25px] font-[600] md:text-[30px] md:font-[600] mb-1">
+                Contact Us
+              </p>
+              <p className="text-[14px] font-[400] md:text-[20px] md:font-[400] mb-6">
+                Have Questions? Talk to our customer support team.
+              </p>
+            </div>
+          </Grid>
+          <Grid size={{ xs: 12, md: 4 }}>
+            <div className="flex_column p-3 border-slate-200 border rounded-md">
+              <div className="flex_start gap-4">
+                <Image
+                  width={25}
+                  height={25}
+                  src="/contact/c-1.svg"
+                  alt="contact"
+                />
+                <div className="flex_column gap-2">
+                  <p className="text-[20px] font-[600] text-primary_black ">
+                    WhatApp
+                  </p>
 
-      {/* Your contact information boxes go here */}
+                  <p className="text-primary_green underline cursor-pointer font-[500] text-[15px]">
+                    Click here to start chat.
+                  </p>
+                  <p className="text-primary_gray font-normal text-[12px]">
+                    Sunday - Saturday
+                  </p>
+                  <p className="text-primary_gray font-normal text-[12px]">
+                    9 am - 9 pm
+                  </p>
+                </div>
+              </div>
+            </div>
+          </Grid>
 
-      {/* Render Accordions only after component mounts to avoid hydration issues */}
-      {mounted && (
-        <div className="w-full md:w-[65%] flex flex-col items-center mt-5 text-center">
-          <p className="font-[600] text-[25px] md:text-[30px] text-primary_black mb-5">
-            Frequently Asked Questions
-          </p>
-          {accordionData.map((item) => (
-            <Accordion key={item.id} sx={{ width: "100%" }}>
-              <AccordionSummary
-                expandIcon={mounted ? <AiOutlinePlus /> : <AiOutlineMinus />}
-                aria-controls={`panel${item.id}-content`}
-                id={`panel${item.id}-header`}
-              >
-                <Typography
-                  className="text-start text-[14px] md:text-[18px]"
-                  sx={{
-                    fontWeight: "600",
-                    color: "#171717",
-                  }}
+          <Grid size={{ xs: 12, md: 4 }}>
+            <div className="flex_column p-3 border-slate-200 border rounded-md">
+              <div className="flex_start gap-4">
+                <Image
+                  width={25}
+                  height={25}
+                  src="/contact/c-2.svg"
+                  alt="contact"
+                />
+                <div className="flex_column gap-2">
+                  <p className="text-[20px] font-[600] text-primary_black ">
+                    Call
+                  </p>
+
+                  <p className="text-primary_black  font-[500] text-[15px]">
+                    0801 234 5678
+                  </p>
+                  <p className="text-primary_gray font-normal text-[12px]">
+                    Sunday - Saturday
+                  </p>
+                  <p className="text-primary_gray font-normal text-[12px]">
+                    9 am - 9 pm
+                  </p>
+                </div>
+              </div>
+            </div>
+          </Grid>
+
+          <Grid size={{ xs: 12, md: 4 }}>
+            <div className="flex_column p-3 border-slate-200 border rounded-md">
+              <div className="flex_start gap-4">
+                <Image
+                  width={25}
+                  height={25}
+                  src="/contact/c-3.svg"
+                  alt="contact"
+                />
+                <div className="flex_column gap-2">
+                  <p className="text-[20px] font-[600] text-primary_black ">
+                    Email
+                  </p>
+
+                  <p className="text-primary_black  font-[500] text-[15px]">
+                    example@domain.com
+                  </p>
+                  <p className="text-primary_gray font-normal text-[12px]">
+                    Sunday - Saturday
+                  </p>
+                  <p className="text-primary_gray font-normal text-[12px]">
+                    9 am - 9 pm
+                  </p>
+                </div>
+              </div>
+            </div>
+          </Grid>
+        </Grid>
+
+        {/* Render Accordions only after component mounts to avoid hydration issues */}
+        {mounted && (
+          <div className="w-full md:w-[65%] mx-auto flex flex-col items-center mt-5 text-center">
+            <p className="font-[600] text-[25px] md:text-[30px] text-primary_black mb-5">
+              Frequently Asked Questions
+            </p>
+            {accordionData.map((item) => (
+              <Accordion key={item.id} sx={{ width: "100%" }}>
+                <AccordionSummary
+                  expandIcon={mounted ? <AiOutlinePlus /> : <AiOutlineMinus />}
+                  aria-controls={`panel${item.id}-content`}
+                  id={`panel${item.id}-header`}
                 >
-                  {item.id}. {item.text}
-                </Typography>
-              </AccordionSummary>
-              <AccordionDetails>
-                <Typography>
-                  {item.content && typeof item.content === "object" ? (
-                    <div>
-                      {Object.values(item.content).map((text, index) => (
-                        <Typography
-                          className="text-start text-[13px] md:text-[15px]"
-                          key={index}
-                        >
-                          . {text}
-                        </Typography>
-                      ))}
-                    </div>
-                  ) : (
-                    item.content
-                  )}
-                </Typography>
-              </AccordionDetails>
-            </Accordion>
-          ))}
-        </div>
-      )}
+                  <Typography
+                    className="text-start text-[14px] md:text-[18px]"
+                    sx={{
+                      fontWeight: "600",
+                      color: "#171717",
+                    }}
+                  >
+                    {item.id}. {item.text}
+                  </Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <Typography>
+                    {item.content && typeof item.content === "object" ? (
+                      <div>
+                        {Object.values(item.content).map((text, index) => (
+                          <Typography
+                            className="text-start text-[13px] md:text-[15px]"
+                            key={index}
+                          >
+                            . {text}
+                          </Typography>
+                        ))}
+                      </div>
+                    ) : (
+                      item.content
+                    )}
+                  </Typography>
+                </AccordionDetails>
+              </Accordion>
+            ))}
+          </div>
+        )}
+      </motion.div>
 
-      {/* Client-Only Component */}
-      <Dapp />
+      {/* Animating the Dapp component separately */}
+      <motion.div
+        ref={DappRef}
+        initial="hidden"
+        animate={dappView ? "visible" : "hidden"}
+        variants={faqAndContactsVariant}
+        className="mt-10"
+      >
+        <Dapp />
+      </motion.div>
     </div>
   );
 };

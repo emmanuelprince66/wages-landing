@@ -2,8 +2,31 @@
 import Image from "next/image";
 import React from "react";
 import Dapp from "../contact/Dapp";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 const Blog = () => {
+  const financialRef = useRef(null);
+  const literacyRef = useRef(null);
+  const budgetRef = useRef(null);
+  const helpRef = useRef(null);
+  const dappRef = useRef(null);
+
+  const financialRefView = useInView(financialRef, { once: false });
+  const literacyRefView = useInView(literacyRef, { once: false });
+  const budgetRefView = useInView(budgetRef, { once: false });
+  const helpRefView = useInView(helpRef, { once: false });
+  const dappRefView = useInView(dappRef, { once: false });
+
+  const fadeVariant = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 1.8, ease: "easeOut" },
+    },
+  };
+
   return (
     <div className="flex_column_center text-center w-[90%] md:w-[75%] py-4 mx-auto  gap-4 mt-[10%] md:mt-[3%]  justify-center">
       <p className="text-[25px] font-[600] md:text-[30px] md:font-[600] mb-1 ">
@@ -18,7 +41,14 @@ const Blog = () => {
       </p>
 
       <div className="w-full mt-[4%]">
-        <div className="flex flex-col md:flex-row md:gap-4">
+        <motion.div
+          ref={financialRef}
+          initial="hidden"
+          animate={financialRefView ? "visible" : "hidden"}
+          variants={fadeVariant}
+          className="flex flex-col md:flex-row md:gap-4"
+        >
+          <div></div>
           <div className="flex flex-col md:flex-row md:flex-1 items-center justify-center md:gap-4">
             <div className="order-1 md:order-1 md:flex-1">
               <div className="flex_column gap-5 mb-7 md:mb-0">
@@ -45,9 +75,15 @@ const Blog = () => {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="flex flex-col md:flex-row md:gap-4 mt-[6%]">
+        <motion.div
+          ref={literacyRef}
+          initial="hidden"
+          animate={literacyRefView ? "visible" : "hidden"}
+          variants={fadeVariant}
+          className="flex flex-col md:flex-row md:gap-4 mt-[6%]"
+        >
           <div className="flex flex-col md:flex-row md:flex-1 items-center justify-center  md:gap-4">
             <div className="order-2 md:order-1 md:flex-1">
               <div className="h-full w-full">
@@ -84,8 +120,15 @@ const Blog = () => {
               </div>
             </div>
           </div>
-        </div>
-        <div className="flex flex-col md:flex-row md:gap-4 mt-[6%]">
+        </motion.div>
+
+        <motion.div
+          ref={budgetRef}
+          initial="hidden"
+          animate={budgetRefView ? "visible" : "hidden"}
+          variants={fadeVariant}
+          className="flex flex-col md:flex-row md:gap-4 mt-[6%]"
+        >
           <div className="flex flex-col md:flex-row md:flex-1 items-center justify-center  md:gap-4">
             <div className="order-2 md:order-2 md:flex-1">
               <div className="h-full w-full">
@@ -136,9 +179,15 @@ const Blog = () => {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="flex flex-col md:flex-row md:gap-4 mt-[6%]">
+        <motion.div
+          ref={helpRef}
+          initial="hidden"
+          animate={helpRefView ? "visible" : "hidden"}
+          variants={fadeVariant}
+          className="flex flex-col md:flex-row md:gap-4 mt-[6%]"
+        >
           <div className="flex flex-col md:flex-row md:flex-1 items-center justify-center  md:gap-4">
             <div className="order-2 md:order-1 md:flex-1">
               <div className="h-full w-full">
@@ -192,10 +241,18 @@ const Blog = () => {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
 
-      <Dapp />
+      <motion.div
+        ref={dappRef}
+        initial="hidden"
+        animate={dappRefView ? "visible" : "hidden"}
+        variants={fadeVariant}
+        className="w-full"
+      >
+        <Dapp />
+      </motion.div>
     </div>
   );
 };

@@ -44,18 +44,17 @@ const SwiperComponent: React.FC = () => {
         modules={[Navigation, Pagination, Scrollbar]}
         spaceBetween={20} // Space between slides
         breakpoints={{
-          // Configure breakpoints
           320: {
-            slidesPerView: 1, // Show 1 slide on small screens (mobile)
+            slidesPerView: 1,
           },
           768: {
-            slidesPerView: 2.5, // Show 2.5 slides on medium screens
+            slidesPerView: 2.5,
           },
           1024: {
-            slidesPerView: 2.5, // Show 2.5 slides on large screens
+            slidesPerView: 2.5,
           },
         }}
-        // navigation
+        navigation
         pagination={{ clickable: true }}
         onSwiper={(swiper) => console.log(swiper)}
         onSlideChange={() => console.log("slide change")}

@@ -60,8 +60,8 @@ const Navbar = () => {
     <div className="relative w-full bg-[#ffff] py-7">
       <div className="w-[85%] mx-auto flex justify-between items-center">
         <Image
-          width={100}
-          height={100}
+          width={150}
+          height={150}
           src="/navbar/wages-icon.svg"
           alt="main icon"
         />

@@ -71,8 +71,8 @@ const Header = () => {
 
       <div className="w-full h-full flex_center md:mt-0">
         <Image
-          width={700}
-          height={700}
+          width={800}
+          height={800}
           className="object-cover md:mt-0 mt-9"
           src="/header/h-6.png"
           alt="pic"
