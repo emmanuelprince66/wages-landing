@@ -6,12 +6,14 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
 const Blog = () => {
+  const blogRef = useRef(null);
   const financialRef = useRef(null);
   const literacyRef = useRef(null);
   const budgetRef = useRef(null);
   const helpRef = useRef(null);
   const dappRef = useRef(null);
 
+  const blogRefView = useInView(blogRef, { once: false });
   const financialRefView = useInView(financialRef, { once: false });
   const literacyRefView = useInView(literacyRef, { once: false });
   const budgetRefView = useInView(budgetRef, { once: false });
@@ -29,16 +31,24 @@ const Blog = () => {
 
   return (
     <div className="flex_column_center text-center w-[90%] md:w-[75%] py-4 mx-auto  gap-4 mt-[10%] md:mt-[3%]  justify-center">
-      <p className="text-[25px] font-[600] md:text-[30px] md:font-[600] mb-1 ">
-        Blog Posts
-      </p>
-      <p className="text-[14px] font-[400] md:text-[20px] md:font-[400] mb-6 max-w-[97%] md:max-w-[67%]">
-        Welcome to WagesFinance blog, where we empower you to take control of
-        your financial future.
-      </p>
-      <p className="text-[20px] font-[600] md:text-[25px] md:font-[600] mb-1">
-        Financial Literacy
-      </p>
+      <motion.div
+        ref={blogRef}
+        initial="hidden"
+        animate={blogRefView ? "visible" : "hidden"}
+        variants={fadeVariant}
+        className="flex_column_center text-center w-full"
+      >
+        <p className="text-[25px] font-[600] md:text-[30px] md:font-[600] mb-1 ">
+          Blog Posts
+        </p>
+        <p className="text-[14px] font-[400] md:text-[20px] md:font-[400] mb-6 max-w-[97%] md:max-w-[67%]">
+          Welcome to WagesFinance blog, where we empower you to take control of
+          your financial future.
+        </p>
+        <p className="text-[20px] font-[600] md:text-[25px] md:font-[600] mb-1">
+          Financial Literacy
+        </p>
+      </motion.div>
 
       <div className="w-full mt-[4%]">
         <motion.div
