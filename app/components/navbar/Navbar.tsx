@@ -58,13 +58,15 @@ const Navbar = () => {
 
   return (
     <div className="relative w-full bg-[#ffff] py-7">
-      <div className="w-[85%] mx-auto flex justify-between items-center">
-        <Image
-          width={150}
-          height={150}
-          src="/navbar/wages-icon.svg"
-          alt="main icon"
-        />
+      <div className="md:w-[75%] w-[95%]  mx-auto flex justify-between items-center">
+        <Link href="/">
+          <Image
+            width={150}
+            height={150}
+            src="/navbar/wages-icon.svg"
+            alt="main icon"
+          />
+        </Link>
 
         <div className="hidden md:flex md:gap-6">
           {links?.map((link) =>
@@ -133,7 +135,17 @@ const Navbar = () => {
                     style={{ fontSize: "2rem" }}
                     className={`text-primary_black ${
                       link?.path === pathname && "font-[800] text-bold_green"
-                    }   hover:text-bold_green cursor-pointer text_small transition-colors duration-700 ease-in-out`}
+                    } hover:text-bold_green cursor-pointer text_small transition-colors duration-700 ease-in-out`}
+                  >
+                    {link.des}
+                  </p>
+                </Link>
+              ) : pathname !== "/" ? (
+                <Link href="/" key={link.id}>
+                  <p
+                    onClick={handleCloseOver}
+                    style={{ fontSize: "2rem" }}
+                    className="text-primary_black hover:text-bold_green cursor-pointer text_small transition-colors duration-700 ease-in-out"
                   >
                     {link.des}
                   </p>
@@ -150,7 +162,7 @@ const Navbar = () => {
                 >
                   <p
                     style={{ fontSize: "2rem" }}
-                    className="text-primary_black  hover:text-bold_green cursor-pointer text_small transition-colors duration-700 ease-in-out"
+                    className="text-primary_black hover:text-bold_green cursor-pointer text_small transition-colors duration-700 ease-in-out"
                   >
                     {link.des}
                   </p>

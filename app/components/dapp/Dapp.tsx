@@ -3,7 +3,7 @@ import React from "react";
 
 const Dapp = () => {
   return (
-    <div className="mx-auto w-[90%] mt-[8%] md:w-[70%]">
+    <div className="mx-auto w-[90%] mt-[10%] md:w-[75%]">
       <div className="flex flex-col md:flex-row lg:flex-row px-4 pt-4 bg-[#027A17] rounded-lg mx-auto justify-evenly items-center">
         <div className="md:flex-basis-1/2 lg:flex-basis-1/2 order-2 md:order-1 lg:order-1">
           <Image

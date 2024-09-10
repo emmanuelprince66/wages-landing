@@ -28,7 +28,7 @@ const Footer = () => {
                 alt="main icon"
               />
 
-              <p className="text-[#E6F5E8] text-[14px] font-[400] flex-wrap max-w-[70%]">
+              <p className="text-[#E6F5E8] text-[14px] font-[400] flex-wrap  w-full md:max-w-[70%]">
                 Maximize your earnings and unlock financial growth. Make the
                 most of your money and watch your wealth soar!
               </p>

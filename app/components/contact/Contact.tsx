@@ -17,6 +17,11 @@ const Contact = () => {
     setMounted(true);
   }, []);
 
+  const [expanded, setExpanded] = useState(null);
+
+  const handleChange = (panel: any) => (event: any, isExpanded: any) => {
+    setExpanded(isExpanded ? panel : null);
+  };
   const accordionData = [
     {
       id: 1,
@@ -95,7 +100,7 @@ const Contact = () => {
     <div className="flex_column_center text-center w-[90%] md:w-[75%] py-4 mx-auto gap-4 mt-[10%] md:mt-[3%] justify-center">
       {/* Animating the FAQ and Contact information */}
       <motion.div
-        className="w-full md:w-[90%]"
+        className="w-full"
         ref={ContactInfoRef}
         initial="hidden"
         animate={contactInfoView ? "visible" : "hidden"}
@@ -199,14 +204,25 @@ const Contact = () => {
 
         {/* Render Accordions only after component mounts to avoid hydration issues */}
         {mounted && (
-          <div className="w-full md:w-[65%] mx-auto flex flex-col items-center mt-5 text-center">
+          <div className="w-full md:w-[65%] mx-auto flex flex-col items-center mt-[10%] text-center">
             <p className="font-[600] text-[25px] md:text-[30px] text-primary_black mb-5">
               Frequently Asked Questions
             </p>
             {accordionData.map((item) => (
-              <Accordion key={item.id} sx={{ width: "100%" }}>
+              <Accordion
+                key={item.id}
+                expanded={expanded === item.id}
+                onChange={handleChange(item.id)}
+                sx={{ width: "100%" }}
+              >
                 <AccordionSummary
-                  expandIcon={mounted ? <AiOutlinePlus /> : <AiOutlineMinus />}
+                  expandIcon={
+                    expanded === item.id ? (
+                      <AiOutlineMinus />
+                    ) : (
+                      <AiOutlinePlus />
+                    )
+                  }
                   aria-controls={`panel${item.id}-content`}
                   id={`panel${item.id}-header`}
                 >
@@ -250,7 +266,7 @@ const Contact = () => {
         initial="hidden"
         animate={dappView ? "visible" : "hidden"}
         variants={faqAndContactsVariant}
-        className="mt-10"
+        className="mt-10 w-full"
       >
         <Dapp />
       </motion.div>

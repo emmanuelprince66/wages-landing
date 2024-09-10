@@ -3,7 +3,7 @@ import React from "react";
 
 const Referral = () => {
   return (
-    <div className="flex_column_center text-center w-[90%] md:w-[70%] py-4 mx-auto  gap-4 mt-[10%] md:mt-[4%]  justify-center">
+    <div className="flex_column_center text-center w-[90%] md:w-[75%] py-4 mx-auto  gap-4 mt-[10%] md:mt-[4%]  justify-center">
       <p className="text-[25px] font-[600] md:text-[30px] md:font-[600] mb-1">
         WageReferral
       </p>
@@ -15,7 +15,7 @@ const Referral = () => {
         How it Works
       </p>
 
-      <div className="flex flex-col  items-center md:flex-row gap-[3rem] md:gap-[2rem]  justify-center mx-auto ">
+      <div className="flex flex-col  items-center md:flex-row  gap-[3rem]   justify-between w-full mx-auto ">
         <Image
           width={350}
           height={350}

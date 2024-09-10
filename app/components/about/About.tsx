@@ -5,13 +5,13 @@ const About = () => {
   return (
     <div
       id="about"
-      className="flex_column_center w-full py-4 mx-auto text- gap-4 mt-[10%] md:mt-[4%] "
+      className="flex_column_center w-full md:w-[75%] py-4 mx-auto text- gap-4 mt-[10%] md:mt-[4%] "
     >
       <p className="text-[25px] font-[600] md:text-[30px] md:font-[600] mb-6">
         About Us
       </p>
 
-      <div className="w-full md:w-[80%] mx-auto bg-[#F9F8FF] py-[2rem] px-[0.8rem]  md:py-[3rem] rounded-md md:px-[2rem] flex flex-col  md:flex-row gap-[3rem]">
+      <div className="w-full  mx-auto bg-[#F9F8FF] py-[2rem] px-[0.8rem]  md:py-[3rem] rounded-md md:px-[2rem] flex flex-col  md:flex-row gap-[3rem]">
         <div className="flex-1 flex flex-col gap-3 ">
           <div className="flex-1 rounded-[12px] bg-white p-3 flex items-start gap-3">
             <Image
