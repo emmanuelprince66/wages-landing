@@ -30,7 +30,7 @@ const Blog = () => {
   };
 
   return (
-    <div className="flex_column_center text-center w-[90%]  md:w-[75%] py-4 mx-auto  gap-4 mt-[10%] md:mt-[3%]  justify-center">
+    <div className="flex_column_center text-center w-[90%]  md:w-[1200px] py-4 mx-auto  gap-4 mt-[10%] md:mt-[3%]  justify-center">
       <motion.div
         ref={blogRef}
         initial="hidden"

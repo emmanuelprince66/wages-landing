@@ -19,7 +19,7 @@ const Footer = () => {
     <>
       {!state && (
         <div className="w-full px-5  md:px-0 py-5 bg-[#001E06] mt-[10%]  h-full">
-          <div className="flex flex-col h-full md:h-[15rem] w-full md:max-w-[75%] md:min-w-[75%]  items-center md:flex-row gap-[3rem]  justify-between mx-auto">
+          <div className="flex flex-col h-full md:h-[15rem] w-full md:max-w-[1200px]   items-center md:flex-row gap-[3rem]  justify-between mx-auto">
             <div className="flex_column gap-5 ">
               <Image
                 width={140}
@@ -94,7 +94,7 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div className="flex flex-col w-full md:w-[75%] mt-10 mx-auto gap-[3rem] md:gap-[2rem] ">
+          <div className="flex flex-col w-full md:max-w-[1200px] mt-10 mx-auto gap-[3rem] md:gap-[2rem] ">
             <Divider
               sx={{ color: "white", background: "white", width: "100%" }}
             />
