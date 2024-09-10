@@ -5,7 +5,7 @@ const About = () => {
   return (
     <div
       id="about"
-      className="flex_column_center w-full md:w-[75%] py-4 mx-auto text- gap-4 mt-[10%] md:mt-[4%] "
+      className="flex_column_center w-full md:w-[1200px] py-4 mx-auto text- gap-4 mt-[10%] md:mt-[4%] "
     >
       <p className="text-[25px] font-[600] md:text-[30px] md:font-[600] mb-6">
         About Us

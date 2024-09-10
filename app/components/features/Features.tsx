@@ -10,7 +10,7 @@ const Features = () => {
         Features
       </p>
 
-      <div className="flex flex-col w-[90%] md:w-[75%] items-center md:flex-row gap-[5rem] justify-center mx-auto ">
+      <div className="flex flex-col w-[90%] md:w-[1200px] items-center md:flex-row gap-[5rem] justify-center mx-auto ">
         <div className="flex_column_center flex-1 gap-4 bg-[#F9F8FF] p-3 rounded-md text-center">
           <Image
             width={50}
@@ -57,7 +57,7 @@ const Features = () => {
           />
         </div>
       </div>
-      <div className="flex flex-col w-[90%] md:w-[75%] items-center mt-5 md:flex-row gap-[4rem] justify-center mx-auto ">
+      <div className="flex flex-col w-[90%] md:w-[1200px]  items-center mt-5 md:flex-row gap-[4rem] justify-center mx-auto ">
         <div className="flex_column_center flex-1 gap-4 bg-[#F9F8FF] p-3 rounded-md text-center">
           <Image
             width={50}

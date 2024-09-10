@@ -9,7 +9,7 @@ const Why = () => {
       </p>
 
       <div className="bg-secondary_green py-9  w-full  ">
-        <div className="flex flex-col  md:w-[75%]  items-center md:flex-row  gap-[3rem] w-full justify-between mx-auto ">
+        <div className="flex flex-col  md:w-[1200px]  items-center md:flex-row  gap-[3rem] w-full justify-between mx-auto ">
           <Image
             width={300}
             height={300}
