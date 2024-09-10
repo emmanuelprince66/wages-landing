@@ -125,6 +125,7 @@ const Contact = () => {
                   height={25}
                   src="/contact/c-1.svg"
                   alt="contact"
+                  className="pt-1 md:pt-0"
                 />
                 <div className="flex_column gap-2">
                   <p className="text-[20px] font-[600] text-primary_black ">
@@ -153,6 +154,7 @@ const Contact = () => {
                   height={25}
                   src="/contact/c-2.svg"
                   alt="contact"
+                  className="pt-1 md:pt-0"
                 />
                 <div className="flex_column gap-2">
                   <p className="text-[20px] font-[600] text-primary_black ">
@@ -181,6 +183,7 @@ const Contact = () => {
                   height={25}
                   src="/contact/c-3.svg"
                   alt="contact"
+                  className="pt-1 md:pt-0"
                 />
                 <div className="flex_column gap-2">
                   <p className="text-[20px] font-[600] text-primary_black ">
@@ -204,7 +207,7 @@ const Contact = () => {
 
         {/* Render Accordions only after component mounts to avoid hydration issues */}
         {mounted && (
-          <div className="w-full md:w-[65%] mx-auto flex flex-col items-center mt-[10%] text-center">
+          <div className="w-full md:w-[65%] mx-auto flex flex-col items-center mt-[20%] md:mt-[10%] text-center">
             <p className="font-[600] text-[25px] md:text-[30px] text-primary_black mb-5">
               Frequently Asked Questions
             </p>
