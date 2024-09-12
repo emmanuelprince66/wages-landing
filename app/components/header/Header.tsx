@@ -74,7 +74,7 @@ const Header = () => {
           width={800}
           height={800}
           className="object-cover md:mt-0 mt-9"
-          src="/header/h-6.png"
+          src="/header/h-6.svg"
           alt="pic"
         />
       </div>
