@@ -96,7 +96,7 @@ const Footer = () => {
             </div>
           </div>
           <div className="flex flex-col w-full md:max-w-[1200px] mt-10 mx-auto gap-[3rem] md:gap-[2rem] ">
-            <div className="w-full flex flex-col justify-center items-center gap-4">
+            <div className="w-full flex flex-col justify-center items-center text-center gap-4">
               <Link href="/terms">
                 <p className="text-white text-[16px] hover:text-bold_green cursor-pointer text_small transition-colors duration-700 ease-in-out">
                   Terms & Condition
