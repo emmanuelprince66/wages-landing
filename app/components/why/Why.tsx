@@ -14,21 +14,21 @@ const Why = () => {
             width={300}
             height={300}
             className="object-fit"
-            src="/why/w-1.png"
+            src="/why/w-1.svg"
             alt="icn"
           />
           <Image
             width={300}
             height={300}
             className="object-fit"
-            src="/why/w-2.png"
+            src="/why/w-2.svg"
             alt="icn"
           />
           <Image
             width={300}
             height={300}
             className="object-fit"
-            src="/why/w-3.png"
+            src="/why/w-3.svg"
             alt="icn"
           />
         </div>
