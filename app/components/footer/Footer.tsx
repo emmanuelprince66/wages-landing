@@ -4,6 +4,7 @@ import { useStateContext } from "@/app/util/StateContext";
 import Image from "next/image";
 import { Link as ScrollLink } from "react-scroll";
 import { Divider } from "@mui/material";
+import Link from "next/link";
 
 const Footer = () => {
   const { state } = useStateContext();
@@ -95,6 +96,19 @@ const Footer = () => {
             </div>
           </div>
           <div className="flex flex-col w-full md:max-w-[1200px] mt-10 mx-auto gap-[3rem] md:gap-[2rem] ">
+            <div className="w-full flex flex-col justify-center items-center gap-4">
+              <Link href="/terms">
+                <p className="text-white text-[16px] hover:text-bold_green cursor-pointer text_small transition-colors duration-700 ease-in-out">
+                  Terms & Condition
+                </p>
+              </Link>
+              <Link href="/privacy">
+                <p className="text-white text-[16px] hover:text-bold_green cursor-pointer text_small transition-colors duration-700 ease-in-out">
+                  Privacy
+                </p>
+              </Link>
+            </div>
+
             <Divider
               sx={{ color: "white", background: "white", width: "100%" }}
             />

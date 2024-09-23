@@ -33,6 +33,7 @@ const Navbar = () => {
       path: "/contact",
     },
     { id: 5, noti: "blog", to: "/blog", des: "Blog" },
+    // { id: 6, noti: "privacy", to: "/privacy", des: "Privacy" },
   ];
 
   const handleCloseOver = () => {
