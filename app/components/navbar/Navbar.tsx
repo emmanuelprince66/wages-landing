@@ -100,7 +100,11 @@ const Navbar = () => {
           )}
         </div>
 
-        {isTabletOrDesktop && <CustomButton>Get The App</CustomButton>}
+        {isTabletOrDesktop && (
+          <CustomButton>
+            <Link href={""}>Get The App</Link>
+          </CustomButton>
+        )}
 
         <div
           className="block md:hidden transition-transform duration-300 ease-in-out transform"

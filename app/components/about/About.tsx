@@ -56,7 +56,7 @@ const About = () => {
 
         <div className="relative flex-2">
           <Image
-            src="/about/a-1.svg"
+            src="/about/a-1.png"
             alt="icn"
             className="object-cover ml-0 "
             width={400}

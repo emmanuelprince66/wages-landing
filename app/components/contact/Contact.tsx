@@ -9,6 +9,7 @@ import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import Dapp from "./Dapp";
 import Grid from "@mui/material/Grid2";
 import { motion, useInView } from "framer-motion"; // Import Framer Motion
+import Link from "next/link";
 
 const Contact = () => {
   const [mounted, setMounted] = useState(false);
@@ -132,9 +133,12 @@ const Contact = () => {
                     WhatApp
                   </p>
 
-                  <p className="text-primary_green underline cursor-pointer font-[500] text-[15px]">
-                    Click here to start chat.
-                  </p>
+                  <Link href="https://chat.whatsapp.com/EU8kVd0CtToJm9cMrm642n">
+                    <p className="text-primary_green underline cursor-pointer font-[500] text-[15px]">
+                      Click here to start chat.
+                    </p>
+                  </Link>
+
                   <p className="text-primary_gray font-normal text-[12px]">
                     Sunday - Saturday
                   </p>
@@ -162,7 +166,7 @@ const Contact = () => {
                   </p>
 
                   <p className="text-primary_black  font-[500] text-[15px]">
-                    0801 234 5678
+                    +234 706 813 5861
                   </p>
                   <p className="text-primary_gray font-normal text-[12px]">
                     Sunday - Saturday
@@ -191,7 +195,7 @@ const Contact = () => {
                   </p>
 
                   <p className="text-primary_black  font-[500] text-[15px]">
-                    example@domain.com
+                    Info@wagesfinance.ng
                   </p>
                   <p className="text-primary_gray font-normal text-[12px]">
                     Sunday - Saturday
